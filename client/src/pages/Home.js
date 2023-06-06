@@ -1,30 +1,26 @@
 import React from 'react';
 import { useQuery } from '@apollo/client';
-
 import UserList from '../components/UserList';
-
 import { QUERY_USERS } from '../utils/queries';
 
 const Home = () => {
-  const { loading, data } = useQuery(QUERY_USERS);
-  const users = data?.users || [];
+	const { loading, data } = useQuery(QUERY_USERS);
 
-  return (
-    <main>
-      <div className="flex-row justify-center">
-        <div className="col-12 col-md-10 my-3">
-          {loading ? (
-            <div>Loading...</div>
-          ) : (
-            <UserList
-              users={users}
-              title="add later"
-            />
-          )}
-        </div>
-      </div>
-    </main>
-  );
+	if (loading) {
+		return <div>Loading...</div>;
+	}
+
+	const users = data.getUsers;
+
+	return (
+		<main>
+			<div className="flex-row justify-center">
+				<div className="col-12 col-md-10 my-3">
+					<UserList users={users} title="Recipes" />
+				</div>
+			</div>
+		</main>
+	);
 };
 
 export default Home;

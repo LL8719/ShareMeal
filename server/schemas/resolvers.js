@@ -4,13 +4,23 @@ const { signToken } = require('../utils/auth');
 
 const resolvers = {
 	Query: {
+		me: async (parent, args, context) => {
+			if (context.user) {
+				const userData = await User.findOne({ _id: context.user._id })
+					.select('-__v -password')
+					.populate('recipes');
+
+				return userData;
+			}
+			throw new AuthenticationError('You need to be logged in!');
+		},
 		// Query tested
 		getUsers: async (_, __) => {
 			try {
 				const users = await User.find()
 					.select('-__v -password')
 					.populate('recipes');
-				console.log(users);
+
 				return users;
 			} catch (error) {
 				throw new Error('Failed to fetch users');
@@ -45,6 +55,7 @@ const resolvers = {
 		getCategories: async (_, __, context) => {
 			if (context.user) {
 				const categories = await Category.find();
+
 				return categories;
 			}
 			throw new AuthenticationError('Not logged in');
@@ -102,7 +113,7 @@ const resolvers = {
 				const deletedUser = await User.findOneAndDelete({
 					_id: context.user._id,
 				});
-				console.log(deletedUser);
+
 				await Recipe.deleteMany({ _id: { $in: deletedUser.recipes } });
 
 				return deletedUser;
