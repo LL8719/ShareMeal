@@ -1,4 +1,6 @@
 import React from 'react';
+import '@fontsource/poppins/900.css'
+
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import {
 	ApolloClient,
@@ -10,6 +12,9 @@ import { setContext } from '@apollo/client/link/context';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Home from './pages/Home';
+import AppNav from './components/AppNav';
+import Header from './components/Header';
+import Footer from  './components/Footer/Footer';
 import SavedRecipes from './pages/SavedRecipes';
 import UserRecipes from './components/UserRecipes';
 
@@ -39,6 +44,8 @@ function App() {
 		<ApolloProvider client={client}>
 			<Router>
 				<div>
+				<AppNav/>
+					<Header/>
 					<Routes>
 						<Route path="/" element={<Home />} />
 						<Route path="/saved" element={<SavedRecipes />} />
@@ -46,6 +53,7 @@ function App() {
 						<Route path="/signup" element={<Signup />} />
 						<Route path="/users/:userId/recipes" element={<UserRecipes />} />
 					</Routes>
+					<Footer/>
 				</div>
 			</Router>
 		</ApolloProvider>
