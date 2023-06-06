@@ -15,6 +15,8 @@ import Home from './pages/Home';
 import AppNav from './components/AppNav';
 import Header from './components/Header';
 import Footer from  './components/Footer/Footer';
+import SavedRecipes from './pages/SavedRecipes';
+import UserRecipes from './components/UserRecipes';
 
 const httpLink = createHttpLink({
 	uri: '/graphql',
@@ -46,8 +48,10 @@ function App() {
 					<Header/>
 					<Routes>
 						<Route path="/" element={<Home />} />
+						<Route path="/saved" element={<SavedRecipes />} />
 						<Route path="/login" element={<Login />} />
 						<Route path="/signup" element={<Signup />} />
+						<Route path="/users/:userId/recipes" element={<UserRecipes />} />
 					</Routes>
 					<Footer/>
 				</div>
