@@ -1,21 +1,45 @@
 import { gql } from '@apollo/client';
 
-export const QUERY_USERS = gql`
-	query allUsers {
-		users {
+export const GET_ME = gql`
+	{
+		me {
 			_id
 			username
-			recipes
+			email
+			recipes {
+				_id
+				title
+				content
+				image
+			}
+		}
+	}
+`;
+
+export const QUERY_USERS = gql`
+	query getUsers {
+		getUsers {
+			_id
+			username
+			recipes {
+				_id
+				title
+				content
+			}
 		}
 	}
 `;
 
 export const QUERY_SINGLE_USER = gql`
-	query singleUser($userId: ID!) {
-		user(userId: $userId) {
+	query getUserById($userId: ID!) {
+		getUserById(userId: $userId) {
 			_id
 			username
-			recipes
+			recipes {
+				_id
+				title
+				content
+			}
 		}
 	}
 `;
