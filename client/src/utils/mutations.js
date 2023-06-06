@@ -13,7 +13,7 @@ export const ADD_USER = gql`
 `;
 
 export const ADD_RECIPE = gql`
-	mutation addRecipe($userId: ID!, $recipes: String!) {
+	mutation addRecipe($title: String!, $content: String!) {
 		addRecipe(title: $title, content: $content) {
 			_id
 			title
@@ -21,14 +21,13 @@ export const ADD_RECIPE = gql`
 		}
 	}
 `;
-
 export const LOGIN_USER = gql`
 	mutation login($email: String!, $password: String!) {
 		login(email: $email, password: $password) {
 			token
 			user {
 				_id
-				name
+				username
 			}
 		}
 	}
@@ -38,8 +37,6 @@ export const DELETE_RECIPE = gql`
 	mutation deleteRecipe($recipeId: ID!) {
 		deleteRecipe(recipeId: $recipeId) {
 			_id
-			name
-			recipes
 		}
 	}
 `;
