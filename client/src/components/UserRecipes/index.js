@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import { QUERY_SINGLE_USER } from '../../utils/queries';
 
@@ -18,7 +18,8 @@ const UserRecipes = () => {
 
 	return (
 		<div className="container">
-			<h3 className="text-primary">User Recipes</h3>
+			<Link to="/">Back to Home</Link>{' '}
+			{/* Add the Link component to create a button that links to the home page */}
 			{user ? (
 				<div>
 					<h4 className="text-secondary">{user.username}'s Recipes</h4>
@@ -32,7 +33,11 @@ const UserRecipes = () => {
 					))}
 				</div>
 			) : (
-				<div className="text-danger">User not found</div>
+				<div
+					className="text-danger"
+					style={{ fontSize: '34px', fontWeight: 'bold' }}>
+					You Need to be Logged in!
+				</div>
 			)}
 		</div>
 	);
