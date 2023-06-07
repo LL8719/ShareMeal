@@ -40,3 +40,13 @@ export const DELETE_RECIPE = gql`
 		}
 	}
 `;
+
+export const UPDATE_RECIPE = gql`
+	mutation updateRecipe($recipeId: ID!, $title: String, $content: String) {
+		updateRecipe(recipeId: $recipeId, title: $title, content: $content) {
+			_id
+			title
+			content
+		}
+	}
+`;
