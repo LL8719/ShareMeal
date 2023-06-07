@@ -2,7 +2,6 @@ import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import { QUERY_SINGLE_USER } from '../../utils/queries';
-
 const UserRecipes = () => {
 	const { userId } = useParams();
 
@@ -42,5 +41,4 @@ const UserRecipes = () => {
 		</div>
 	);
 };
-
 export default UserRecipes;
