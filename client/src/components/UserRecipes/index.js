@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import { QUERY_SINGLE_USER } from '../../utils/queries';
 const UserRecipes = () => {
+
 	const { userId } = useParams();
 
 	const { loading, data } = useQuery(QUERY_SINGLE_USER, {
@@ -42,3 +43,4 @@ const UserRecipes = () => {
 	);
 };
 export default UserRecipes;
+
