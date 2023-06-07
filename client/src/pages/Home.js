@@ -16,7 +16,7 @@ const Home = () => {
 		<main>
 			<div className="flex-row justify-center">
 				<div className="col-12 col-md-10 my-3">
-					<UserList users={users} title="Recipes" />
+					<UserList users={users} title="Recipes"/>
 				</div>
 			</div>
 		</main>

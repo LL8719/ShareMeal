@@ -67,13 +67,13 @@ const SavedRecipes = () => {
 
 	return (
 		<>
-			<div className="text-light bg-dark p-5">
+			<div className=" pb-4">
 				<Container>
-					<h1>{userData.username} Recipes!</h1>
+					<h1>{userData.username}'s Recipes!</h1>
 				</Container>
 			</div>
 			<Container>
-				<h2 className="pt-5">
+				<h2 className="pt-2">
 					{userData.recipes?.length
 						? `Viewing ${userData.recipes.length} saved ${
 								userData.recipes.length === 1 ? 'recipe' : 'recipes'
