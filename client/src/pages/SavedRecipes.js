@@ -109,14 +109,14 @@ const SavedRecipes = () => {
 			</div>
 			<Container>
 				<h2 className="pt-2">
-					{userData.recipes?.length
+					{userData.recipes && userData.recipes.length !== 0
 						? `Viewing ${userData.recipes.length} saved ${
 								userData.recipes.length === 1 ? 'recipe' : 'recipes'
 						  }:`
 						: 'You have no Recipes!'}
 				</h2>
 				<Row>
-					{userData.recipes?.length &&
+					{userData.recipes &&
 						userData.recipes.map((recipe) => (
 							<Col md="4" key={recipe._id} className="mb-4">
 								<Card border="dark">
