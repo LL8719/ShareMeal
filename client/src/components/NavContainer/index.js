@@ -9,7 +9,6 @@ const NavContainer = () => {
         <div className='nav-container'>
             <AppNav />
             <Header />
-
         </div>
     );
 };

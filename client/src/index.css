@@ -21,8 +21,8 @@ code {
 
 /* styles for login and signup */
 .card-wrapper {
-  background-image: -webkit-linear-gradient(135deg, #C1D0B5 30%, #99A98F 90%);
-  background-image: linear-gradient(135deg, #C1D0B5 30%, #99A98F 90%);
+  background-image: -webkit-linear-gradient(135deg, #EAEAEA 30%, #B2B2B2 90%);
+  background-image: linear-gradient(135deg, #EAEAEA 30%, #B2B2B2 90%);
   position: relative;
   z-index: 3;
   padding: 100px;
@@ -70,7 +70,7 @@ form button {
   display: inline-block;
   padding: 0 20px;
   font-size: 1rem;
-  background-color: #e1d4bb;
+  background-color: #DD5353;
   background-size: 100%;
   background-image: -webkit-linear-gradient(45deg,
       rgba(255, 255, 255, 0.15) 25%, rgba(0, 0, 0, 0) 25%,
@@ -83,7 +83,7 @@ form button {
       rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, rgba(0, 0, 0, 0) 75%,
       rgba(0, 0, 0, 0));
   background-size: 20px 20px, 100% 100%;
-  border: 1px solid #cbb279;
+  border: 1px solid #B73E3E;
   border-bottom-width: 3px;
   color: white;
   outline: none;
@@ -135,24 +135,10 @@ form button {
   transition: all 0.3s ease;
 }
 
-.card:hover:before {
-  z-index: -1;
-  -webkit-transform: scale(0.96) translate(0, 16px);
-  transform: scale(0.96) translate(0, 16px);
-}
-
-.card:hover:after {
-  z-index: -2;
-  -webkit-transform: scale(0.92) translate(0, 32px);
-  transform: scale(0.92) translate(0, 32px);
-}
-
-
 .recipe-card {
   position: relative;
   display: block;
   width: 100%;
-  /* max-width: 300px;  */
   margin: auto;
   padding: 15px;
   background-color: white;
@@ -168,7 +154,83 @@ form button {
   border-bottom: 1px dashed #e6e6e6;
 }
 
+/* navbar */
+.navbar-brand {
+  margin-right: 2px;
+}
+
+/* USERLIST */
 .user-card {
-  position: relative;
-  left: 10%;
+  display: block;
+  justify-self: center;
+  justify-content: center;
+  margin: 0px 10px;
+}
+
+.cardRow {
+  width: 90%;
+  display: block;
+  justify-content: space-around;
+  margin: 0 auto;
+
+}
+
+.searchBar {
+  width: 50%;
+  margin: 0 auto;
+}
+
+/* SAVED PAGE */
+.savedCols {
+  display: flex;
+}
+
+.contOne {
+  flex-basis: 25%;
+  width: 300px;
+}
+
+.contOneCard {
+  width: 100%;
+}
+
+.contTwo {
+  flex-basis: 55%;
+}
+
+.savedCards {
+  margin: 0 10px
+}
+
+@media screen and (max-width: 767px) {
+  .savedCols {
+    display: block;
+  }
+
+  .contTwo {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+  }
+
+  .center {
+    margin: 0 auto;
+  }
+
+  .navbar-brand {
+    font-size: 4vw;
+  }
+
+  .nav-link {
+    font-size: 4vw;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1045px) {
+  .savedCols {
+    display: block;
+  }
+  .center {
+    margin: 0 auto;
+  }
 }

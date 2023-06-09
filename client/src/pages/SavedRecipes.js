@@ -102,106 +102,109 @@ const SavedRecipes = () => {
 
 	return (
 		<>
-			<div className=" pb-4">
+			<div className="pb-4 pt-3">
 				<Container>
 					<h1>{userData.username}'s Recipes!</h1>
 				</Container>
 			</div>
-			<Container>
-				<h2 className="pt-2">
-					{userData.recipes && userData.recipes.length !== 0
-						? `Viewing ${userData.recipes.length} saved ${
-								userData.recipes.length === 1 ? 'recipe' : 'recipes'
-						  }:`
-						: 'You have no Recipes!'}
-				</h2>
-				<Row>
-					{userData.recipes &&
-						userData.recipes.map((recipe) => (
-							<Col md="4" key={recipe._id} className="mb-4">
-								<Card border="dark">
-									{recipe.image && (
-										<Card.Img
-											src={recipe.image}
-											alt={`The title for ${recipe.title}`}
-											variant="top"
-										/>
-									)}
-									<Card.Body>
-										<Card.Title>{recipe.title}</Card.Title>
-										<Card.Text>{recipe.content}</Card.Text>
-										<Button
-											className="btn-block btn-danger"
-											onClick={() => handleDeleteRecipe(recipe._id)}>
-											Delete this Recipe!
-										</Button>
-										<Button
-											className="btn-block btn-primary mt-2"
-											onClick={() => {
-												setUpdateRecipeId(recipe._id);
-												setUpdateTitle(recipe.title);
-												setUpdateContent(recipe.content);
-											}}>
-											Update this Recipe
-										</Button>
-										{updateRecipeId === recipe._id && (
-											<div className="mt-2">
-												<input
-													type="text"
-													placeholder="Enter updated title"
-													value={updateTitle}
-													onChange={(e) => setUpdateTitle(e.target.value)}
-													className="form-control mb-2"
-												/>
-												<textarea
-													placeholder="Enter updated content"
-													value={updateContent}
-													onChange={(e) => setUpdateContent(e.target.value)}
-													className="form-control mb-2"
-												/>
-												<Button
-													className="btn-block btn-success"
-													onClick={() => handleUpdateRecipe(recipe._id)}>
-													Update Recipe
-												</Button>
-											</div>
+
+			<div className='savedCols'>
+
+				<Container className='contOne pt-2'>
+					<h2>Create a Recipe</h2>
+					<Row>
+						<Col>
+							<Card className='contOneCard' border="dark">
+								<Card.Body>
+									<Card.Title>Create a New Recipe</Card.Title>
+									<input
+										type="text"
+										placeholder="Enter title"
+										value={title}
+										onChange={(e) => setTitle(e.target.value)}
+										className="form-control mb-3"
+									/>
+									<textarea
+										placeholder="Enter content"
+										value={content}
+										onChange={(e) => setContent(e.target.value)}
+										className="form-control mb-3"
+									/>
+									<Button
+										className="btn-block btn-primary"
+										onClick={handleCreateRecipe}>
+										Create Recipe
+									</Button>
+								</Card.Body>
+							</Card>
+						</Col>
+					</Row>
+				</Container>
+				<Container className='contTwo'>
+					<h2 className="pt-2">
+						{userData.recipes && userData.recipes.length !== 0
+							? `Viewing ${userData.recipes.length} saved ${userData.recipes.length === 1 ? 'recipe' : 'recipes'
+							}:`
+							: 'You have no Recipes!'}
+					</h2>
+					<Row>
+						{userData.recipes &&
+							userData.recipes.map((recipe) => (
+								<div key={recipe._id} className="mb-4 center">
+									<Card border="dark" className='savedCards'>
+										{recipe.image && (
+											<Card.Img
+												src={recipe.image}
+												alt={`The title for ${recipe.title}`}
+												variant="top"
+											/>
 										)}
-									</Card.Body>
-								</Card>
-							</Col>
-						))}
-				</Row>
-			</Container>
-			<Container>
-				<h2 className="pt-5">Create a New Recipe</h2>
-				<Row>
-					<Col md="4">
-						<Card>
-							<Card.Body>
-								<Card.Title>Create a New Recipe</Card.Title>
-								<input
-									type="text"
-									placeholder="Enter title"
-									value={title}
-									onChange={(e) => setTitle(e.target.value)}
-									className="form-control mb-3"
-								/>
-								<textarea
-									placeholder="Enter content"
-									value={content}
-									onChange={(e) => setContent(e.target.value)}
-									className="form-control mb-3"
-								/>
-								<Button
-									className="btn-block btn-primary"
-									onClick={handleCreateRecipe}>
-									Create Recipe
-								</Button>
-							</Card.Body>
-						</Card>
-					</Col>
-				</Row>
-			</Container>
+										<Card.Body>
+											<Card.Title>{recipe.title}</Card.Title>
+											<Card.Text>{recipe.content}</Card.Text>
+											<Button
+												className="btn-block btn-danger"
+												onClick={() => handleDeleteRecipe(recipe._id)}>
+												Delete this Recipe!
+											</Button>
+											<Button
+												className="btn-block btn-primary mt-2"
+												onClick={() => {
+													setUpdateRecipeId(recipe._id);
+													setUpdateTitle(recipe.title);
+													setUpdateContent(recipe.content);
+												}}>
+												Update this Recipe
+											</Button>
+											{updateRecipeId === recipe._id && (
+												<div className="mt-2">
+													<input
+														type="text"
+														placeholder="Enter updated title"
+														value={updateTitle}
+														onChange={(e) => setUpdateTitle(e.target.value)}
+														className="form-control mb-2"
+													/>
+													<textarea
+														placeholder="Enter updated content"
+														value={updateContent}
+														onChange={(e) => setUpdateContent(e.target.value)}
+														className="form-control mb-2"
+													/>
+													<Button
+														className="btn-block btn-success"
+														onClick={() => handleUpdateRecipe(recipe._id)}>
+														Update Recipe
+													</Button>
+												</div>
+											)}
+										</Card.Body>
+									</Card>
+								</div>
+							))}
+					</Row>
+				</Container>
+			</div>
 		</>
 	);
 };
