@@ -34,13 +34,18 @@ const UserRecipes = () => {
 
 					))}
 				</div>
-			) : (
-				<div
-					className="text-danger"
-					style={{ fontSize: '34px', fontWeight: 'bold' }}>
-					You Need to be Logged in!
+
+			) : showLoginCard ? (
+				<div>
+					<div
+						className="text-danger"
+						style={{ fontSize: '34px', fontWeight: 'bold' }}>
+						You Need to be Logged in to see this User's Recipes!!
+					</div>
+					<Login />
+          
 				</div>
-			)}
+			) : null}
 		</div>
 	);
 };
