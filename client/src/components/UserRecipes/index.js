@@ -38,6 +38,7 @@ const UserRecipes = () => {
 						</div>
 					))}
 				</div>
+
 			) : showLoginCard ? (
 				<div>
 					<div
