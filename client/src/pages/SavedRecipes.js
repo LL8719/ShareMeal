@@ -107,6 +107,7 @@ const SavedRecipes = () => {
 					<h1>{userData.username}'s Recipes!</h1>
 				</Container>
 			</div>
+
 			<div className='savedCols'>
 
 				<Container className='contOne pt-2'>
@@ -141,13 +142,13 @@ const SavedRecipes = () => {
 				</Container>
 				<Container className='contTwo'>
 					<h2 className="pt-2">
-						{userData.recipes?.length
+						{userData.recipes && userData.recipes.length !== 0
 							? `Viewing ${userData.recipes.length} saved ${userData.recipes.length === 1 ? 'recipe' : 'recipes'
 							}:`
 							: 'You have no Recipes!'}
 					</h2>
 					<Row>
-						{userData.recipes?.length &&
+						{userData.recipes &&
 							userData.recipes.map((recipe) => (
 								<div key={recipe._id} className="mb-4 center">
 									<Card border="dark" className='savedCards'>
