@@ -8,10 +8,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* padding: 3vw 5vw; */
     font-weight: bold;
-
-    /* margin-bottom: 80px; */
   }
 
   .center {
@@ -27,7 +24,6 @@
 
   .navbar a{
     margin-top: -20px; 
-    /* padding: 0px 10px 0px 10px; */
     text-decoration: none;
     text-transform: uppercase;
     color: white;
@@ -36,9 +32,14 @@
   }
 
   .navbar a:hover {
-    
     transition: color 0.5s;
-    font-size: larger;
+    transform: scale(1.06);
+    transition: .3s;
+  }
+  
+  .navbar a:not(hover) {
+    transform: scale(1);
+    transition: .3s;
   }
 
   .logo{
@@ -52,13 +53,10 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 100vw;
     height: 100%;
-    background-size: cover;
-    background-position: center;
-    overflow: hidden;;
+    overflow: hidden;
     z-index:  98;
- 
   }
   
   .video-background video {
