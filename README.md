@@ -1,142 +1,60 @@
-# **SHAREMEAL**
-  
+# SHAREMEAL
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Badge: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+### This project is licensed under the MIT license.
 
----
+[Link: MIT](https://opensource.org/licenses/MIT)
 
-<br>
-<br>
+- [License](#license)
 
+## Description
 
+Share meal allows users to create and sharemeal recipes with others. Allowing them to explore new flavors, experiment with ingridients and create new dishes that would love to share with a community of like-minded individuals.
 
-![Desktop Img](/client/src/assets/ShareMealDesktop.png) 
+### Deployed App
 
+[Link to App ](https://sharemeal.herokuapp.com/).
 
- 
+![Deployed App](./client/src/assets/sharemeal.gif)
 
+## Table of Contents (Optional)
 
+- [Description](#description)
+- [Installation](#installation)
+- [Usage](#usage)
+- [License](#license)
+- [Contributing](#contributing)
+- [Test](#test)
+- [Questions](#questions)
 
+## <a href="Installation">Installation</a>
 
+No installation is required as the app runs in the browser.
 
+## <a href="Usage">Usage</a>
 
+Sing up and Log in to Create and Share your Recipes.
 
-  
-<br>
-<br>
-<br> 
+## <a href="License">License</a>
 
-## *Description*  
-<br>
-<br>
+MIT
 
-As passionate food lovers, we created SHAREMEAL as an application that allows the user to create and share meal recipes with others.  
+## <a href="Contributing">Contributing</a>
 
-We are constantly exploring new flavors, experimenting with ingredients, and creating unique dishes that we would love to share with a  
+Any contributions are welcome by reviewing and identifying any bugs or issues that need to be fixed, along with suggestions on features or improvements that could be added to the application.
 
-community of like-minded individuals.  We envision an application that makes recipe creation and sharing effortless.
+## <a href="Tests">Tests</a>
 
+N/A
 
+## <a href="Questions">Questions</a>
 
-<br>
-<br>
+for questions please either open an issue on.
 
-## *Technologies*  
-<br>
+### Use the following links to contact us
 
-Technologies used are React, Chakra UI, Bootstrap, Pexels Photocommunity, Raleway Fonts, React-Icons on the front end.  
-
-GraphQL with a Node.js and Express.js server.  
-
-MongoDB and the Mongoose ODM for the database.
-
-JWT was used for authentication.
-
- 
-
-<br>
-<br>
-
-## *Instructions*  
-<br>  
-
-To view the site, navigate to the URL link to our Heroku deployed application provided below.  
-
-On the navbar select the option to `Login/Signup`.  
-
-When form loads, select `Signup` at the top.  
-
-Input username of choice, an email address and password of 8 characters minimum.  
-
-After authentication, the user gains access to options to create, update, save and delete recipes.  
-
-Other options for the user are categories such as Italian, Asian, European and American.  
-
-
-
-
-
-
-
-
-
-
-<br>
-<br>
-
-
-
-## *GitHub Repository*  
-
-[Link Here](https://github.com/LL8719/ShareMeal)
-<br>
-<br>
-
-## *Deployed Application URL on Heroku*
-
-[Link Here](https://joijsjpkjksjkjksjkjkkj/)
-
-
-### *License*  
-This project is licensed under the [MIT License Copyright (c) 2023 LL8719 ](https://opensource.org/licenses/MIT)
-
-
- 
- 
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+[GitHub Profile](https://github.com/LL8719/).
+[GitHub Profile](https://github.com/jeannav/).
+[GitHub Profile](https://github.com/SaintOfMirren).
+[GitHub Profile](https://github.com/JosieSavill).
