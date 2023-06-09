@@ -43,7 +43,7 @@ const UserRecipes = () => {
 					<div
 						className="text-danger"
 						style={{ fontSize: '34px', fontWeight: 'bold' }}>
-						You Need to be Logged in to see this User's Recipes!
+						You Need to be Logged in to see this User's Recipes!!
 					</div>
 					<Login />
 				</div>
