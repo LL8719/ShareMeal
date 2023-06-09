@@ -19,16 +19,16 @@ const AppNav = () => {
           <Box fontFamily={'Poppins'} color={'white'} textShadow=' 4px 4px 6px rgba(0, 0, 0, 8)' fontSize={'8vw'}>ShareMeal</Box>
           </div>
         <div className='nav-container'>
-        <Box className="navbar" display="flex" margin="0 auto 30px auto" maxW={"900px"}>
-          <Box display="flex">
+        <Box className="navbar" display="flex" >
+          <Box display="flex" className='navbar-brand'>
             <Navbar.Brand as={Link} to='/'>
               Home
             </Navbar.Brand>
           </Box>
 
             {Auth.loggedIn() ? (
-              <>
-                <Nav.Link as={Link} to='/saved'>
+              <>       
+                <Nav.Link as={Link} to='/saved' className='navbar-brand'>
                   Dashboard
                 </Nav.Link>
                 <Nav.Link onClick={Auth.logout}>Logout</Nav.Link>
